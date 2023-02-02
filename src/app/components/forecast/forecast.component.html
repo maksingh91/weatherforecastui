@@ -1,0 +1,24 @@
+<div style="margin-top: 5%;">
+
+  <h2>Enter City Details</h2>
+
+ <div>
+  <label for="city-name">City name: </label>
+  <input id="city-name" [(ngModel)]="city" placeholder="City name"/>
+</div>
+<button type="button" (click)="getForecast()">Find</button>
+
+
+ <ul *ngFor="let group of weatherForecast">
+  <li>Date : {{ group.date }}</li>
+  <li>High Temperature : {{ group.highTemp }}</li>
+  <li>Low Temperature  : {{ group.lowTemp }}</li>
+  Pridiction: 
+  <ul>
+    <li *ngFor="let predict of group.predictions">
+      {{predict}}
+    </li>
+  </ul>
+</ul>
+
+</div>
